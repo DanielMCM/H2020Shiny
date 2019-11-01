@@ -1,0 +1,4511 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Big Data - Visualization Tool
+\end_layout
+
+\begin_layout Author
+Daniel Mínguez Camacho, Yoselin Garcia Salinas
+\end_layout
+
+\begin_layout Date
+December 9th, 2018
+\end_layout
+
+\begin_layout Section
+Problem characterization
+\end_layout
+
+\begin_layout Standard
+Since the beginning of the master, we have talked about the European commission
+ program 'Horizon 2020' in several courses (Innovation & Entrepreneurship
+ or Big Data for example).
+ 
+\end_layout
+
+\begin_layout Standard
+This is the reason why we wanted to take advantage of this assignment in
+ order to to dive a little bit in the different projects, organizations
+ and topics that are part of it and know how much money it is used in this
+ kind of projects.
+\end_layout
+
+\begin_layout Standard
+We have approach this assignment by conceiving our potential users as citizens
+ from the European union looking for information regarding H2020.
+ We have tried to answer the potential questions that they could have regarding
+ the different projects, budget, organizations and researchers that are
+ part of this objective 2020.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Regarding the budget:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Which is the total budget dedicated to this projects?
+\end_layout
+
+\begin_layout Itemize
+How is the budget divided between countries?
+\end_layout
+
+\begin_layout Itemize
+Has the budget evolve during years or has it maintain constant?
+\end_layout
+
+\begin_layout Itemize
+Would be possible to start these research projects without European funding?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Regarding organizations
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Which organizations work together in some projects? 
+\end_layout
+
+\begin_layout Itemize
+Which organizations have more researchers?
+\end_layout
+
+\begin_layout Itemize
+Where are these organizations located?
+\end_layout
+
+\begin_layout Itemize
+Which are the coordinators of these projects?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Regarding projects:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How many projects are being develop in each country?
+\end_layout
+
+\begin_layout Itemize
+How are the projects distributed along a specific country?
+\end_layout
+
+\begin_layout Itemize
+Which are the countries with more projects? 
+\end_layout
+
+\begin_layout Itemize
+How many projects started in a year in each country? 
+\end_layout
+
+\begin_layout Itemize
+How many projects started in certain period in each country?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Regarding topics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Which topics are more recurrent?
+\end_layout
+
+\begin_layout Itemize
+Which topics receive more funding?
+\end_layout
+
+\begin_layout Itemize
+How topics are related with one another?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+After this first approach to the problem, we tried to look for this information
+ in the CORDIS web page 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://cordis.europa.eu/"
+literal "false"
+
+\end_inset
+
+ in order to know more about the elements present in our dataset.
+ We have realized that a world map that shows the organizations part of
+ the H2020 is available 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://cordis.europa.eu/datalab/datalab.php"
+literal "false"
+
+\end_inset
+
+ and that anyone can look for projects in this 
+\begin_inset CommandInset href
+LatexCommand href
+name "link"
+target "https://cordis.europa.eu/projects/home_en.html"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We have also analyzed the different datasets that we have chosen (explained
+ in second point) as detailed in the 
+\begin_inset Quotes eld
+\end_inset
+
+Input files
+\begin_inset Quotes erd
+\end_inset
+
+ tab, in order to have a first approach, we decided to include this analysis
+ in the visualization as in this design:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/files.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After analyzing the information that we have available and compare this
+ information with the problems that we want to address, we have decided
+ to do the following:
+\end_layout
+
+\begin_layout Itemize
+Perform a 
+\series bold
+first approach analysis
+\series default
+ for each file as detailed in the 
+\begin_inset Quotes eld
+\end_inset
+
+Input Files
+\begin_inset Quotes erd
+\end_inset
+
+ tab, here it is possible to find some first approach visualization as:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Organizations:
+\series default
+ Pie charts representing the contribution per country and the roles of the
+ organizations in projects.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Projects: 
+\series default
+A barplot representing the European contribution per year and a scatterplot
+ representing the logs of the European contribution to each project versus
+ the total cost, that represents that almost any project would have been
+ possible without European funding.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+General:
+\series default
+ It is possible to find tables with the details of each file.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Represent the funding that each country receives
+\series default
+, since little information is available about this topic in the web at a
+ first stage.
+ In order to do this we have decided to create a treemap representing the
+ number of projects and the funding received per country, including more
+ details about which regions/organizations receive this funding.
+ This is the first design we did:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/kpi2.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The map available in the web represents all organizations across the world,
+ but we considered more interesting to know 
+\series bold
+where are located the organizations that are coordinators
+\series default
+ of some of the projects, in order to know if entities outside Europe can
+ coordinate and request projects, in order to do that, we decided to elaborate
+ a map locating the different coordinators:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/MAP Layout.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the map available in the web it is possible to know
+\series bold
+ which organization works with another
+\series default
+, but in some cases it becomes unfeasible to follow the connections (for
+ example if you go to Madrid you can see around 300 dots in Puerta del Sol).
+ This is the reason why we chose to create a Graph, including also researchers,
+ in order to make this analysis easier.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/graph.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Finally, in the web page we have several classifications regarding topics
+ (by country, by general topic), but unless you know what you are looking
+ for, it is difficult to have a 
+\series bold
+global overview of the different topics
+\series default
+, this is why we decided to make a TF-IDF scatterplot, showing the 10 more
+ relevant words for each topic visually.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/algorithm.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dataset chosen
+\end_layout
+
+\begin_layout Standard
+We found the following files in the European Data Portal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The data was obtained from 
+\begin_inset CommandInset href
+LatexCommand href
+name "EU Open Data Portal"
+target "http://data.europa.eu/euodp/en/data/dataset/cordisH2020projects"
+literal "false"
+
+\end_inset
+
+.
+ Also available 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://www.europeandataportal.eu/data/dataset/http-cordis-europa-eu-projects"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+cordis-h2020projects.xlsx
+\series default
+: Projects part of Horizon 2020.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+rcn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+acronym
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+programme
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+topics
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+frameworkProgramme
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+title
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+startDate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+endDate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectUrl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+objective
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+totalCost
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ecMaxContribution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+call
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+fundingScheme
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Numeric
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+coordinator
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+coordinatorCountry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+participants
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+participantCountries
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+subjects
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+cordis-h2020organizations.xlsx
+\series default
+: Organizations that participate in at least one of the projects.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectRcn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectAcronym
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+role
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+shortName
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+activityType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+endOfParticipation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ecContribution
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numeric
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+country
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+street
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+city
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+postCode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+organizationUrl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+vatNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numeric
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactForm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactTitle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactFirstNames
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactLastNames
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactFunction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactTelephoneNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numeric
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+contactFaxNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numeric
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Researchers.rds
+\series default
+, this file has been created by concatenating the followings:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+cordis-h2020-msca-fellows.xls
+\series default
+: researchers working on projects funded by the Marie Skłodowska-Curie actions
+ under the Horizon 2020 framework program.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+cordis-h2020-erc-pi.xlsx: 
+\series default
+This dataset lists the Principal Investigators (PIs) working on projects
+ funded by the European Research Council (ERC) under the Horizon 2020 framework
+ program (H2020).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectAcronym
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+fundingScheme 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+title
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+firstName
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+lastName
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+organisationId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+cordis-h2020reports.xlsx: 
+\series default
+Reports of some of the projects.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+rcn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+language
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+title
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+teaser
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+summary
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+workPerformed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+finalResults
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+lastUpdateDate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Field
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+country
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Num
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+projectAcronym
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+programme
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+topics
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Categ/Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+relatedFile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+url
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+article
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Text
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also have used external data in order to retrieve the geographical location
+ of the different organizations.
+\end_layout
+
+\begin_layout Subsection
+Integrity
+\end_layout
+
+\begin_layout Standard
+We have checked the integrity of the data by joining the different data
+ sets, obtaining the following (We have removed incongruous records from
+ our analysis).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Regarding Organizations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There are 7 Organizations id in the researchers files that does not appear
+ in the Organization file, so we could not retrieve their names.
+\end_layout
+
+\begin_layout Itemize
+There are some organizations with different Organization ID but the same
+ description, we treat them as different organizations.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Regarding Projects:
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There are 59 projects in the researchers files that does not appear in the
+ Projects file, so we could not identify them.
+\end_layout
+
+\begin_layout Itemize
+There are some projects without date, we have include them as NA value for
+ the date.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Regarding Researchers:
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There are 158 projects in the researchers files that does not have any researche
+r associated, we assume this is not a problem since only some relevant researche
+rs are included.
+ 
+\end_layout
+
+\begin_layout Itemize
+There are duplicate researchers that vary only in the title field ('PROF'
+ and 'DR' for example).
+ 
+\end_layout
+
+\begin_layout Itemize
+There are 1.859 researchers without organization, again we assume this is
+ not a problem.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+External data regarding geolocalization:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We had some problems locating some organizations and we set up their location
+ in the capital of their country.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Assumptions:
+\end_layout
+
+\begin_layout Standard
+Based on the information that we have available, we have made the following
+ assumptions in order to work with it:
+\end_layout
+
+\begin_layout Itemize
+All organizations that appear in cordis-h2020organizations.xlsx are part
+ of some project.
+\end_layout
+
+\begin_layout Itemize
+Reports are not mandatory for all projects or most of the projects have
+ not sent yet theirs (Or they have not been published).
+\end_layout
+
+\begin_layout Itemize
+There are organizations with different id and the same description, we suppose
+ this is because they belong to different projects and/or they have different
+ people in charge.
+\end_layout
+
+\begin_layout Itemize
+There are projects with different id and the same Acronym/Description, again
+ we suppose this is because they have different stages or branches and/or
+ different persons in charge (or even different projects with the same acronym).
+\end_layout
+
+\begin_layout Section
+Development
+\end_layout
+
+\begin_layout Subsection
+Map
+\end_layout
+
+\begin_layout Standard
+In order to answer the questions regarding the project’s development along
+ different countries, we decided to use an interactive Map as visual representat
+ion.
+ In the following sections, we are going to describe the decisions made
+ for the design and development of this visual representation.
+\end_layout
+
+\begin_layout Subsubsection
+Data tasks abstractions
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Why?
+\series default
+ Our main goal is to provide to the users an 
+\series bold
+easy way to explore and summarize
+\series default
+ where the projects are being developed along the world in order to incentive
+ them to create new hypotheses based on the information displayed.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Our users want to make a locate search because they already know in which
+ countries, they are interested in, but they don’t know where to get the
+ summarized information.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Actions: 
+\series default
+On one hand, the user should be able to identify the number of projects
+ coordinated in every country, as well as perform comparisons over the quantity
+ of projects developed among different countries.
+ 
+\end_layout
+
+\begin_layout Standard
+On the other hand, the visual representation should show to the user how
+ many projects are coordinated in a specific country and how those projects
+ are distributed in the different regions in the country.
+ The user also can have information about the location and the universities
+ involved in the development of the projects.
+\end_layout
+
+\begin_layout Standard
+Additionally, the user should be able to explore the how many projects started
+ in in every country in certain period.
+ Finally, we want to provide to the users the possibility of stating new
+ hypotheses based on the information discovered in the visual representation.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Targets:
+\series default
+ We want to focus on finding an individual value to be displayed in the
+ visual representation, in this case we want to get the number of projects
+ developed in each country across a period.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+What?
+\series default
+ Creation of an interactive map.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+How? 
+\series default
+We need to work on aggregating the number of projects by area, merging and
+ transforming the data sets in order to get the necessary attributes, such
+ as the name of the country, the latitude and longitude where the projects
+ are developed, to draw the map.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If a user wants to have information about the number of projects developed
+ in each country across a period, we will also need to perform some filtering
+ over the data set.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Interaction and visual encoding
+\end_layout
+
+\begin_layout Standard
+In order to display how many projects are being developed in a country/region
+ in a more effective way, we decided to use an interactive map instead of
+ other visual representation because this representation is more intuitive
+ and expressive for our users to know and to compare the quantity of projects
+ developed in an area, as well as where are located the universities that
+ are working on those projects.
+ 
+\end_layout
+
+\begin_layout Standard
+In this way, the users can read easily relate the areas with the universities
+ where projects are being developed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Design Criteria 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dynamic interaction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We decided to make an interactive map in order to generate relevant views
+ for the user and help him to get the information that he/she requires.
+ Additionally, we want to provide the possibility to select one or multiple
+ countries to be display, make groups based on the spatial position of the
+ marks when zoom is done, and select one point that represents the research
+ center where a project started.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Marks and Channels
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We used two type of marks to represent the number of projects and the location
+ of them on them depending on the zoom of the map.
+ 
+\end_layout
+
+\begin_layout Standard
+When we zoom in over a specific area of the map, we are using the identity
+ visual channel based on the spatial position on a common scale.
+ In order to display where the projects are specifically located, we considered
+ to use points marks as in the following image is represented: 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Map1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When we zoom out the map, we are using a magnitude channel to represent
+ how much projects are being developed in an area.
+ In order to specify what the visual encoding should express, we decided
+ to use an area encoding representation, in which we use containment marks
+ by grouping the individual marks (specific points in the map) into clusters
+ using the spatial proximity where the projects are located.
+ In other words, containment marks enclosures projects based on the geographical
+ area and summarize the number of projects in the same geographical area.
+ 
+\end_layout
+
+\begin_layout Standard
+We considered to used 3 colors to represent the quantity of projects grouped
+ by their spatial proximity.
+ A containment mark colored in orange represents those areas which have
+ more projects.
+ Yellow represents that in that area there are considerably less projects
+ that in the orange areas.
+ Finally, green represents an area where there are less than 10 projects.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see an example of this approach in the following image: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Map2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Algorithmic implementation
+\end_layout
+
+\begin_layout Standard
+For creating the map, initially we used two datasets: cordisref-countries.xls
+ and cordis-h2020projects.xlsx.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Computing geolocation
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+From the projects dataset the API R library 
+\begin_inset CommandInset href
+LatexCommand href
+name "ggmap"
+target "https://cran.r-project.org/web/packages/ggmap/ggmap.pdf"
+literal "false"
+
+\end_inset
+
+ has been used to assign a default location to each of the countries present
+ in the dataset.
+ The problem with this when representing the projects in the map is that
+ the amount of information that is provided is limited, as we can’t differentiat
+e projects from different cities in the same country.
+\end_layout
+
+\begin_layout Standard
+To solve the problem stated above was solved by using two Google Maps APIs
+ and implementing them using Python.
+ The first was the Google Places API[1] where we extracted the latitude
+ and longitude of the universities where the project was developed.
+ However, some universities that weren’t found using this API were retrieved
+ using the Google Geocode API [2].
+ This way a big amount of the universities locations was obtained.
+ However, in some cases this location was not correct, as to obtain the
+ coordinates a text search was being used.
+ To correct mistakes when retrieving the location, an additional check to
+ discard the coordinates that were from incorrect countries was implemented.
+ This way if we retrieved for a university from Spain coordinates from Italy,
+ we discarded them and use the default location computed in the first place.
+ 
+\end_layout
+
+\begin_layout Itemize
+[1] 
+\begin_inset CommandInset href
+LatexCommand href
+name "Google Maps API - Places search"
+target "https://developers.google.com/places/web-service/search"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+[2] 
+\begin_inset CommandInset href
+LatexCommand href
+name "Google Maps API - Geoencoding"
+target "https://developers.google.com/maps/documentation/geocoding/intro"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+After getting the location where each project is located, we created a new
+ dataset in which these attributes are added to the corresponding row.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Drawing the map
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For creating the map, we used 
+\begin_inset CommandInset href
+LatexCommand href
+name "leaflet"
+target "https://leafletjs.com/"
+literal "false"
+
+\end_inset
+
+ which is a JavaScript library which has integration with Shiny.
+ In the UI we invoke the leafletOutput, and on the server side you assign
+ a renderLeaflet call to the output.
+ Additionally, in the server side we provide to Leaflet the dataset with
+ the projects to be drawn as well as the location (latitude and longitude)
+ of each of projects.
+ The information about the location is found in the processed dataset explained
+ in the previous session.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Treemap
+\end_layout
+
+\begin_layout Subsubsection
+Data tasks abstractions
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Why?
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Actions: 
+\series default
+Provide to the user the possibility to compare the quantity of capital invested
+ for the development of the projects in each country, as well as helping
+ them to identify the relation between the number of projects develop in
+ a country and the money invested on those projects.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We also want to give to the user the chance to explore how the and the money
+ are distributed along the different regions of a specific country.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Targets:
+\series default
+ Two quantitative attributes at leaf nodes.
+ We want to focus on finding an individual value to be displayed in the
+ visual representation, in this case our target is to display the number
+ of projects of the different geographical areas along the world.
+ However, we also want to show to the user how is the money investment distribut
+ed along these are.
+ Therefore, each rectangle (leaf node) in the treemap it will show the values
+ for those two values.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+What?
+\series default
+ Creation of an interactive treemap.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+How?
+\series default
+ We need to work on aggregating the number of projects by geography.
+ The map it will contain different levels of granularity because it is intended
+ to represent a hierarchy of three levels, therefore the treemap will be
+ able to display the number of projects in different levels.
+ First, it will show the countries with more projects and bigger project
+ investment.
+ If the user wants to know more about the number of projects and the investment
+ in a particular country, he/she will be able to surf into a region or a
+ City.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Interaction and visual encoding
+\end_layout
+
+\begin_layout Standard
+The map is a good tool to discover where projects are located and to detect
+ areas with big amount of projects.
+ However, we also wanted to allow the user to easily get an idea of the
+ number of projects per geographical area as well as its investment amount.
+\end_layout
+
+\begin_layout Standard
+A treemap was a great fit, as we had a hierarchical structure of countries,
+ regions and cities of the projects.
+ This way using the area to represent the number of projects we could represent
+ all the main countries together and easily grasp how the project are distribute
+d.
+ Then if we zoom in one country, we could see the details of its regions.
+ And if we zoom in a region the most granular detail per city could be seen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Design Criteria 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dynamic interaction
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We decided to make an interactive treemap in order to generate relevant
+ views for the user and help him to get the information that he/she requires.
+ Additionally, we want to provide to the users the possibility of making
+ specific queries using different levels of granularity.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Marks and Channels 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+As in the case of the Map, we are using containment marks order to display
+ hierarchical data using nested rectangles.
+ At the same time, we are using a rectilinear orientation of our elements.
+ We are considering that the size of each node is represented by the number
+ of projects in a geographical and the color of the node represent the total
+ money invested for the development of those projects.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Tree1.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Algorithmic implementation
+\end_layout
+
+\begin_layout Standard
+For creating the map, initially we used a modified file cordis-h2020projects.xlsx
+ with the new attributes about the localization of the projects.
+\end_layout
+
+\begin_layout Standard
+For the creation of the map idiom, we had to extract the cities, regions
+ and coordinates where each project is located.
+ That information was useful for the development of the treemap idiom.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Reducing the number of categories
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+One problem with a treemap visualization is that we had a large number of
+ categories that contain very few projects, so the area was very small,
+ and the text identifiers were overlapping.
+ To avoid this, if the number of projects was less than a certain threshold
+ then those countries, regions or cities were classified as Other.
+ This threshold varied depending on the granularity: 100 for cities,10 for
+ regions, and 5 for cities.
+ For instance, if a country had less than 100 projects then that country
+ appears in the treemap contained in the category Other.
+ This solution made the treemap more appealing visually, as well as more
+ useful, as labels were not overlapping and rectangles with very small areas
+ that couldn’t be appreciated were not present in the plot.
+\end_layout
+
+\begin_layout Standard
+To generate this plot, a tree structure needs to be computed and used to
+ store all the information about countries, regions and cities.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Color dimension
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The number of projects per location and with different levels of granularity
+ was something key to identify areas with more projects.
+ However, the amount of the investment is also very important as some areas
+ might have more projects but with less capital invested.
+ As we also wanted to represent this information, we decided to use a color
+ gradient from red to yellow to represent the size of this investment, dark
+ red representing high investments and pale yellow representing low ones.
+ The scale chosen was thousands of millions of euros, as the original values
+ had too many zeroes, reducing the readability of the legend.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Graph
+\end_layout
+
+\begin_layout Subsubsection
+Data tasks abstractions
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Why? 
+\series default
+The main goal of this visualization is to help to discover in an easy way
+ which organization work with another, letting the user discover the projects
+ and which researchers are involved in them.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Actions: 
+\series default
+Firstly, the user should be able, given a node she is interested, to generate
+ the graph representing the nodes related with it.
+ Also it should be able to investigate the connections among these nodes,
+ generating new levels of connections.
+ At the same time, the user have to be able to identify which organizations
+ receives more funding from which project.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Targets:
+\series default
+ Network of projects, organizations and researchers.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+What?
+\series default
+ Creation of a graph visualization
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+How? 
+\series default
+We decided to merge the files cordis-h2020projects.xlsx, Researchers.rds and
+ cordis-h2020organizations.xlsx together in order to be able to generate
+ the nodes and edges that are necessary to create a graph, weighting the
+ edges by 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ecContribution that represents the European contribution in the project
+ to an specific organization.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interaction and visual encoding
+\end_layout
+
+\begin_layout Standard
+As our purpose with the graph is to answer how the organizations, projects
+ and researchers are linked together, we decided to do the following.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Design Criteria 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dynamic interaction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The first problem that we faced was performance, since the graph has 135K
+ edges and 64k nodes, it was not feasible to represent the whole graph at
+ once, this is why we decided to let the user decide which node she is intereste
+d in and plot the nodes that the original node has connections with.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Graph1.PNG
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Afterwards, in order to allow further investigation and details discovering,
+ we decided to include the option of generate one more level of connections,
+ which works recursively.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Graph2.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, we include the options of interact with the nodes (in case
+ a representation hide some of them) and zoom.
+\end_layout
+
+\begin_layout Standard
+Finally, and for performance reasons, we do not include the names of the
+ nodes unless the user hover one of them, we also hide the edges when the
+ user move the graph.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Marks and Channels
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We distinguish the nodes regarding researchers, projects and organizations
+ with different colors (yellow and blue as the European colors for projects
+ and organizations, light blue for researchers).
+ The nodes have different sizes depending the number of edges (both going
+ in and out) they have.
+ 
+\end_layout
+
+\begin_layout Standard
+The color of the edges is green, but those edges that represent a contribution
+ considered an outlier (above Q4 plus 1.5 the interquartile range) are represente
+d in red.
+ The size of the edge also depends on the contribution.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Algorithmic implementation
+\end_layout
+
+\begin_layout Standard
+In order to develop the graph, first of all, we have created the nodes and
+ edges files from the original files:
+\end_layout
+
+\begin_layout Itemize
+Nodes: The nodes are conformed by the organizations (by id), the projects
+ (also by id) and the researchers (by the concatenation of firstName plus
+ lastName).
+ The weight of the node is calculated once the edges are calculated by taking
+ the number of edges that each node has (both going in and out)
+\end_layout
+
+\begin_layout Itemize
+Edges: The edges are retrieved from two sources:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Projects-Organizations in cordis-h2020organizations.xlsx file, from this
+ file we also take the budget contribution for the weight of the edge.
+ In the case of 0 contribution or the researcher, we apply a value of 1
+ (minimum).
+\end_layout
+
+\begin_layout Itemize
+Researchers-Projects and Researchers-Organizations in Researchers.rds file
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+As the number of nodes and edges is large, we have decided to generate the
+ graph in an interactive way as we have explained in the previous point.
+\end_layout
+
+\begin_layout Standard
+For that, we have use the 
+\begin_inset CommandInset href
+LatexCommand href
+name "visNetwork"
+target "https://datastorm-open.github.io/visNetwork/"
+literal "false"
+
+\end_inset
+
+ library with a 
+\begin_inset CommandInset href
+LatexCommand href
+name "igraph"
+target "https://igraph.org/r/"
+literal "false"
+
+\end_inset
+
+ representation in order to improve performance, the main characteristics
+ are:
+\end_layout
+
+\begin_layout Itemize
+Type of graph, after trying several layouts provided by the igraph library,
+ we have decided to work with the layout_nicely representation, which choose
+ an appropriate layout for a given graph.
+\end_layout
+
+\begin_layout Itemize
+Options to improve performance, as detailed before.
+\end_layout
+
+\begin_layout Itemize
+We have observed that due to the fact that some organizations/projects have
+ different ids with the same names, sometimes when a node is selected, the
+ graph will be unconnected, but we have decided to maintained it this way.
+\end_layout
+
+\begin_layout Subsection
+TF-IDF scatterplot
+\end_layout
+
+\begin_layout Subsubsection
+Data tasks abstractions
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Why?
+\series default
+ This tf-idf calculation and representation is used in order to give a graphical
+ representation to the main ideas and concepts developed by the the different
+ projects across the topics.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Actions: 
+\series default
+The idea is to have a visual representation of the main words along the
+ different topics.
+ This will allow the user to find which ideas are more recurrent and use
+ them to access the topics in which this words appears.
+ Then the user should be able to filter the projects and reports files (in
+ the tab 'Input Files') to find out the details of the projects associated
+ to these topics.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Targets:
+\series default
+ Most relevant words per topic according to tf-idf measure.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+What?
+\series default
+ Creation of a scatterplot visualization, followed by an interactive way
+ of discover different topics.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+How? 
+\series default
+We have decided to calculate the tf-idf based on the tittle of each project,
+ we took the description of the project as the text.
+ After the calculation we extracted the 10 words with higher tf-idf per
+ project and join them to the project topic.
+ The we would display a sctatterplot showing the average tf-idf per word
+ across the different topics and the number of topics in which the word
+ appears.
+ this would be associated to a way of find out which topics have a word,
+ which will allow the user to find the projects associated to this topic
+ in the projects file.
+\end_layout
+
+\begin_layout Subsubsection
+Interaction and visual encoding
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Design Criteria 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dynamic interaction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We split the interaction in two modules, the details can be access in the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Input files
+\begin_inset Quotes erd
+\end_inset
+
+ tab:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dynamic scatterplot: 
+\series default
+With the dynamic scatterplot the user should be able to find which words
+ have higher tf-idf across multiple topics and it will help the user search:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Alg1.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Word searcher: 
+\series default
+Here the user will be able to look for a word and find in which topic its
+ relevant, the user then can access to the topic and see which other words
+ are relevant in it too.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Alg2.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Details: 
+\series default
+The details will be found in the 'Input Files' tab, at the projects or reports
+ sub-tab:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename layouts/Alg3.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Marks and Channels
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+In this case, we just have used a relatively simple scatterplot with dots
+ representing the different words that have been found, allowing the user
+ to select the dots when she click in any part of the scatterplot.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Algorithmic implementation
+\end_layout
+
+\begin_layout Standard
+We have decided to use 
+\begin_inset CommandInset href
+LatexCommand href
+name "tm"
+target "https://cran.r-project.org/web/packages/tm/tm.pdf"
+literal "false"
+
+\end_inset
+
+ and
+\begin_inset CommandInset href
+LatexCommand href
+name " tidytext"
+target "https://cran.r-project.org/web/packages/tidytext/tidytext.pdf"
+literal "false"
+
+\end_inset
+
+ libraries for perfoming the tf-idf calculation.
+ We have calculated the tf-idf for each title offline, the text elements
+ were the concatenation of the title and the description of each project.
+\end_layout
+
+\begin_layout Standard
+After computing the tf-idf we have decided to extract the ten with the higher
+ score and calculate the average tf-idf among the documents, computing the
+ scatter plot plotting the average versus the number of tittles in which
+ it appears.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+We chose this dataset because we were interested in knowing more about Horizon
+ 2020 and the projects involved on it.
+ 
+\end_layout
+
+\begin_layout Standard
+It has been challenging afterwards the process of thinking in which way
+ we could contribute more to the current web CORDIS has available and the
+ process of transforming the dataset available in order to fit the requirements
+ we came up with.
+\end_layout
+
+\begin_layout Standard
+It could be interesting to maintain the code and try to use the next data
+ available for the following projects regarding research and innovation
+ in the EU.
+\end_layout
+
+\end_body
+\end_document
